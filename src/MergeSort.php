@@ -33,7 +33,6 @@ class MergeSort implements SortInterface
         $leftArrayIndex = 0;
         $rightArrayIndex = 0;
 
-
         for ($sortedArrayIndex = 0; $sortedArrayIndex < $arrayCount; $sortedArrayIndex++) {
             if ($rightArrayIndex >= $rightArrayCount) {
                 $sortedArray[$sortedArrayIndex] = $leftArray[$leftArrayIndex];
@@ -41,12 +40,15 @@ class MergeSort implements SortInterface
             } elseif ($leftArrayIndex >= $leftArrayCount) {
                 $sortedArray[$sortedArrayIndex] = $rightArray[$rightArrayIndex];
                 $rightArrayIndex++;
-            } else if ($leftArray[$leftArrayIndex] <= $rightArray[$rightArrayIndex]) {
+            } else if ($leftArray[$leftArrayIndex] < $rightArray[$rightArrayIndex]) {
                 $sortedArray[$sortedArrayIndex] = $leftArray[$leftArrayIndex];
                 $leftArrayIndex++;
             } else {
                 $sortedArray[$sortedArrayIndex] = $rightArray[$rightArrayIndex];
                 $rightArrayIndex++;
+
+                // Algorithms: Design and Analysis Part 1, Coursera
+                // $this->inversionsCount += $leftArrayCount - $leftArrayIndex;
             }
         }
 
