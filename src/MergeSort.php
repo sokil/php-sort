@@ -48,6 +48,7 @@ class MergeSort implements SortInterface
                 $rightArrayIndex++;
 
                 // Algorithms: Design and Analysis Part 1, Coursera
+                // Week 1, Programming Assignment #1
                 // $this->inversionsCount += $leftArrayCount - $leftArrayIndex;
             }
         }
